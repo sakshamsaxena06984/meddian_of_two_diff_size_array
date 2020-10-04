@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int mex(int f,int s,int t)
+{
+ for(int i=0;i<100;i++)
+ {
+     if(i!=f && i!=s && i!=t)
+         return i;
+ }  
+}
+int grund(int n)
+{
+if(n==0)
+    return 0;
+int f=grund(n/2);
+int s=grund(n/3);
+int t=grund(n/6); 
+return mex(f,s,t);
+}
+int main() {
+
+	int n;
+    cin>>n;
+   cout<<grund(n);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
